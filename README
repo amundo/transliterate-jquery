@@ -1,0 +1,43 @@
+A jQuery transliteration plugin
+
+jquery.transliterate.js
+
+MIT License
+
+Background
+
+Transliteration is the process of converting one writing system into another. (Note that it has nothing to do with translation.)
+
+So for instance, one can transliterate  "Ruby" (as in the programming language) into various writing systems: 
+
+* Korean Hangul: 루비 
+* Cyrillic (Russian style, in this case): Рубин
+* Georgian: რუბი
+* Japanese Katakana: ルビー
+
+However, transliteration can serve a variety of purposes. For instance, sometimes it can be used to ease the process of inputting unusual characters. An example of this approach is in use on the Esperanto Wikipedia. Esperanto has a few unusual letters which are capped by a circumflex. Circumflexes are common enough, but Esperanto is rather unusual in setting them atop _c_, _g_, _h_ and others.
+
+Needless to say it's not obvious how to type ĉ ĝ ĥ ĵ ŝ and so forth. So the Esperanto Wikipedia came up with a solution that uses transliteration: to get ĉ, you write 'cx' (and so forth). This works because 'cx' doesn't occur in Esperanto. So we have these rules:
+
+* cx → ĉ
+* gx → ĝ
+* hx → ĥ
+* jx → ĵ
+* sx → ŝ
+* ux → ŭ
+* CX → Ĉ
+* GX → Ĝ
+* HX → Ĥ
+* JX → Ĵ
+* SX → Ŝ
+* UX → Ŭ
+* Cx → Ĉ
+* Gx → Ĝ
+* Hx → Ĥ
+* Jx → Ĵ
+* Sx → Ŝ
+* Ux → Ŭ
+
+Other, more complicated transliteration systems are also possible. For instance, here's a demo that transliterates Romaji into Katakana. So, if you type "toyota", you get トヨタ (try it out here: <a title="Katakana transliteration widget" href="http://ruphus.com/stash/katakana.html">Katakana</a>).
+
+We think it'd be worth really trying to generalize this problem in such a way that people can define transliteration schemes, and how they want to apply them in a web application.
