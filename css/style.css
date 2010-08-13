@@ -1,4 +1,5 @@
 textarea {
+  font-size: 200%;
   width: 45%;
   height: 100px;
   font-family: sans-serif;
@@ -31,7 +32,8 @@ table.rules tr td.outputLetter {
 }
 
 div.rules span {
-  background: #cecece;
+  background: #ececec;
+  color: #666;
   -moz-border-radius: 4px;
   padding: 2px;
   margin: 2px;
@@ -50,6 +52,7 @@ input {
 }
 
 .plaintext { 
+  dir: ltr;
   border: 1px dashed #ccc; 
   background: #FFFDD0; 
 }
