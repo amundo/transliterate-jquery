@@ -23,16 +23,15 @@ use me like this:
       $target = $(this);
       $target.val('');
 
-      $source = $('<input/>', 
-      {
-          class: opts.sourceInputClass,
-      });
+      //$source = $('<input/>', 
+      $source = $target.clone();
+      $source.addClass(opts.sourceInputClass);
 
       $source
         .insertBefore( $target )
         .focus()
-        .keyup(function(e){
-          $target.val($.fn.transliterate.convert($source.val(), opts.table));
+        .bind('keyup blur change', function(e){
+          $(this).next().val($.fn.transliterate.convert($(this).val(), opts.table));
         })
 
     })

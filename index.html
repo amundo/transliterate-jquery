@@ -11,15 +11,22 @@
   <!--[if lt IE 7]><link rel="stylesheet" type="text/css" media="all" href="/javascripts/ie6.css"/><![endif]-->
   <script src="js/jquery-1.4.2.js"></script>
   <script src="js/chr-table.js"></script>
+  <script src="js/eo-table.js"></script>
   <script src="js/jquery.transliterate.js"></script>
 <script>
 
 $(function(){
 
-  $('input[lang=chr]').transliterate({
+  $('textarea[lang=chr]').transliterate({
     sourceInputClass: 'plaintext',
     table: chr
   });
+
+  $('input[lang=eo]').transliterate({
+    sourceInputClass: 'plaintext',
+    table: eo
+  });
+
   /*
 
   $('input[lang=chr]').transliterate({
@@ -38,8 +45,13 @@ $(function(){
 </head>
 <body>
 
-<input lang="chr" type="text" />
+<h1>An experimental transliteration tool.</h1>
 
+<h2>Cherokee</h2>
+<textarea lang="chr" type="text"></textarea>
+
+<h2>Esperanto</h2>
+<input lang="eo" type="text" />
 </body>
 
 </html>
