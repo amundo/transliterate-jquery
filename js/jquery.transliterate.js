@@ -20,28 +20,32 @@ use me like this:
 
       var opts = $.extend({}, $.fn.transliterate.defaults, options);
 
-      this.value = '';
+      $target = $(this);
+      $target.val('');
 
-      $('<input/>', 
-       {
+      $source = $('<input/>', 
+      {
           class: opts.sourceInputClass
+      });
+
+      $source
+        .insertBefore( $target )
+        .focus()
+        .keyup(function(e){
+          var converted = $.fn.transliterate.convert($source.val());
+          $target.val(converted);
         })
-      .insertBefore( $(this) )
-      .focus()
-      .keyup(function(e){
-        console.log(this.value)
-      })
 
     })
-
-    $.fn.transliterate.defaults = { 
-      // table, caseSensitive
-    };
-
-    $.fn.transliterate.convert = function(plaintext){ 
-      return plaintext.toUpperCase();
-    }
-
   }
+
+  $.fn.transliterate.defaults = { 
+    // table, caseSensitive
+  };
+
+  $.fn.transliterate.convert = function(plaintext){ 
+    return plaintext.toUpperCase();
+  };
+
 
 })(jQuery)
