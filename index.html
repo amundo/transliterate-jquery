@@ -13,6 +13,7 @@
   <script src="js/eo-table.js"></script>
   <script src="js/ug-Arab-table.js"></script>
   <script src="js/ug-Cyrl-table.js"></script>
+  <script src="js/ug-Phon-table.js"></script>
   <script src="js/am-table.js"></script>
   <script src="js/jquery.transliterate.js"></script>
 <script>
@@ -41,6 +42,12 @@ $(function(){
     sourceInputClass: 'plaintext',
     caseSensitive: true,
     table: ug_Cyrl
+  });
+
+  $('input[lang=ug-Phon]').transliterate({
+    sourceInputClass: 'plaintext',
+    caseSensitive: true,
+    table: ug_Phon
   });
 
   $('input[lang|=am]').transliterate({
@@ -76,8 +83,11 @@ $(function(){
 <h2>Uyghur Arabic (UEY)</h2>
 <input dir="rtl" lang="ug-Arab" type="text" />
 
-<h2>Uyghur Arabic (USY)</h2>
+<h2>Uyghur Cyrillic (USY)</h2>
 <input lang="ug-Cyrl" type="text" />
+
+<h2>Uyghur IPA</h2>
+<input lang="ug-Phon" type="text" />
 
 <h2>Amharic</h2>
 <input lang="am" type="text" />
