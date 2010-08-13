@@ -33,12 +33,13 @@ use me like this:
         .bind('keyup blur change', function(e){
           $(this).next().val($.fn.transliterate.convert($(this).val(), opts.table));
         })
+        .next().after($.fn.transliterate.viewDiv(opts.table));
 
     })
   }
 
   $.fn.transliterate.defaults = { 
-    // table, caseSensitive
+    caseSensitive: false
   };
 
 
@@ -51,6 +52,24 @@ use me like this:
     })
     return plaintext;
   };
+
+  $.fn.transliterate.viewTable = function (table){
+    var htmltable = ['<table class="rules"><tr><th>type:</th><th>get:</th></tr>'];
+    $.each(table, function(i, [before, after]){
+      htmltable.push("<tr><td class='inputKey'>"+before+"</td><td class='outputLetter'>"+after+"</td></tr>");
+    })
+    htmltable.push('</table>');
+    return htmltable.join('\n');
+  }
+
+  $.fn.transliterate.viewDiv = function (table){
+    var div = ['<div class="rules">'];
+    $.each(table, function(i, [before, after]){
+      div.push("<span class='pair'><span class='before'>"+before+"</span>&nbsp;&rarr;&nbsp;<span class='before'>"+after+"</span></span>");
+    })
+    div.push('</div>');
+    return div.join('\n');
+  }
 
 
 })(jQuery)

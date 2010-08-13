@@ -1,0 +1,56 @@
+textarea {
+  width: 45%;
+  height: 100px;
+  font-family: sans-serif;
+  padding: 4px;
+
+}
+
+table.rules {
+  border-top: 2px solid blue;
+  border-right: 1px solid gray;
+  border-left: 1px solid gray;
+  margin: 2px;
+  width: 100px; 
+  float:right;
+}
+
+table.rules tr td {
+  border-bottom: 1px dotted gray;
+}
+
+table.rules tr td.inputKey {
+  font-family: monospace;
+  text-align: right;
+  padding-right: 4px;
+  border-right: 1px dotted gray;
+}
+
+table.rules tr td.outputLetter {
+  font-weight: bold;
+}
+
+div.rules span {
+  background: #cecece;
+  -moz-border-radius: 4px;
+  padding: 2px;
+  margin: 2px;
+  line-height: 150%;
+  font-size:small;
+}
+
+div.rules span.pair span.before {
+  font-family: monospace;
+}
+
+input { 
+  font-size: 300%; 
+  padding: 4px; 
+  border: 1px solid #ccc;
+}
+
+.plaintext { 
+  border: 1px dashed #ccc; 
+  background: #FFFDD0; 
+}
+

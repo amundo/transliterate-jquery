@@ -2,8 +2,7 @@
 <html>
 <head>
   <title>jquery.transliterate.js demo</title>
-  <link type="text/css" href="style.css" rel="stylesheet" />
-  <link type="text/css" href="style.css" rel="stylesheet" />
+  <link type="text/css" href="css/style.css" rel="stylesheet" />
 
   <meta charset="UTF-8">
   <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -12,6 +11,8 @@
   <script src="js/jquery-1.4.2.js"></script>
   <script src="js/chr-table.js"></script>
   <script src="js/eo-table.js"></script>
+  <script src="js/ug-Arab-table.js"></script>
+  <script src="js/am-table.js"></script>
   <script src="js/jquery.transliterate.js"></script>
 <script>
 
@@ -19,12 +20,26 @@ $(function(){
 
   $('textarea[lang=chr]').transliterate({
     sourceInputClass: 'plaintext',
+    caseSensitive: true,
     table: chr
   });
 
   $('input[lang=eo]').transliterate({
     sourceInputClass: 'plaintext',
+    caseSensitive: true,
     table: eo
+  });
+
+  $('input[lang|=ug]').transliterate({
+    sourceInputClass: 'plaintext',
+    caseSensitive: true,
+    table: ug
+  });
+
+  $('input[lang|=am]').transliterate({
+    sourceInputClass: 'plaintext',
+    caseSensitive: true,
+    table: am
   });
 
   /*
@@ -39,8 +54,6 @@ $(function(){
 })
 </script>
 <style>
-  input { font-size: 300%; padding: 4px; border: 1px solid #ccc;}
-  input.plaintext { border: 1px dashed #ccc; background: #FFFDD0; }
 </style>
 </head>
 <body>
@@ -52,6 +65,13 @@ $(function(){
 
 <h2>Esperanto</h2>
 <input lang="eo" type="text" />
+
+<h2>Uyghur Arabic (UEY)</h2>
+<input dir="rtl" lang="ug-Arab" type="text" />
+
+<h2>Amharic</h2>
+<input lang="am" type="text" />
+
 </body>
 
 </html>
