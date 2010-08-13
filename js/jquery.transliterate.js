@@ -32,8 +32,7 @@ use me like this:
         .insertBefore( $target )
         .focus()
         .keyup(function(e){
-          var converted = $.fn.transliterate.convert($source.val(), opts.table);
-          $target.val(converted);
+          $target.val($.fn.transliterate.convert($source.val(), opts.table));
         })
 
     })
@@ -43,13 +42,16 @@ use me like this:
     // table, caseSensitive
   };
 
+
+
   $.fn.transliterate.convert = function(plaintext, table){ 
     var converted = '';
-    $.each(table, function(before,after){
-      console.log((before, after));
-      //converted += plaintext.replace(before, after);
+    $.each(table, function(i, [before, after]){
+      var pattern = new RegExp(before, 'gi')
+      plaintext = plaintext.replace(pattern, after, 'g');
     })
-    return converted;
+    return plaintext;
   };
+
 
 })(jQuery)
