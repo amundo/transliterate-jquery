@@ -25,14 +25,14 @@ use me like this:
 
       $source = $('<input/>', 
       {
-          class: opts.sourceInputClass
+          class: opts.sourceInputClass,
       });
 
       $source
         .insertBefore( $target )
         .focus()
         .keyup(function(e){
-          var converted = $.fn.transliterate.convert($source.val());
+          var converted = $.fn.transliterate.convert($source.val(), opts.table);
           $target.val(converted);
         })
 
@@ -43,9 +43,13 @@ use me like this:
     // table, caseSensitive
   };
 
-  $.fn.transliterate.convert = function(plaintext){ 
-    return plaintext.toUpperCase();
+  $.fn.transliterate.convert = function(plaintext, table){ 
+    var converted = '';
+    $.each(table, function(before,after){
+      console.log((before, after));
+      //converted += plaintext.replace(before, after);
+    })
+    return converted;
   };
-
 
 })(jQuery)
