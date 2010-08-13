@@ -6,7 +6,8 @@ MIT license
 
 use me like this:
 
-    $('input[lang=chr]').transliterate({tableFile: 'chr.js'})
+    $('input[lang=chr]').transliterate({table: 'chr.js'})
+    $('#someinput').transliterate({table: 'eo.js'})
 
 
 */
@@ -19,18 +20,27 @@ use me like this:
 
       var opts = $.extend({}, $.fn.transliterate.defaults, options);
 
-      $('<input/>', {
-        class: opts.sourceInputClass,
-        //placeholder: 'type here...'
-      })
+      this.value = '';
+
+      $('<input/>', 
+       {
+          class: opts.sourceInputClass
+        })
       .insertBefore( $(this) )
       .focus()
+      .keyup(function(e){
+        console.log(this.value)
+      })
 
     })
 
     $.fn.transliterate.defaults = { 
       // table, caseSensitive
     };
+
+    $.fn.transliterate.convert = function(plaintext){ 
+      return plaintext.toUpperCase();
+    }
 
   }
 
