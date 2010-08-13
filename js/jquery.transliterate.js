@@ -46,7 +46,9 @@ use me like this:
 
   $.fn.transliterate.convert = function(plaintext, table){ 
     var converted = '';
-    $.each(table, function(i, [before, after]){
+    $.each(table, function(i, pairs){
+      var before = pairs[0];
+      var after = pairs[1];
       var pattern = new RegExp(before, 'gi')
       plaintext = plaintext.replace(pattern, after, 'g');
     })
@@ -55,7 +57,9 @@ use me like this:
 
   $.fn.transliterate.viewTable = function (table){
     var htmltable = ['<table class="rules"><tr><th>type:</th><th>get:</th></tr>'];
-    $.each(table, function(i, [before, after]){
+    $.each(table, function(i, pairs){
+      var before = pairs[0];
+      var after = pairs[1];
       htmltable.push("<tr><td class='inputKey'>"+before+"</td><td class='outputLetter'>"+after+"</td></tr>");
     })
     htmltable.push('</table>');
@@ -64,7 +68,9 @@ use me like this:
 
   $.fn.transliterate.viewDiv = function (table){
     var div = ['<div class="rules">'];
-    $.each(table, function(i, [before, after]){
+    $.each(table, function(i, pairs){
+      var before = pairs[0];
+      var after = pairs[1];
       div.push("<span class='pair'><span class='before'>"+before+"</span>&nbsp;&rarr;&nbsp;<span class='before'>"+after+"</span></span>");
     })
     div.push('</div>');
