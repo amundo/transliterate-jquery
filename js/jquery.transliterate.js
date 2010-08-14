@@ -29,7 +29,6 @@ use me like this:
 
       $source
         .insertBefore( $target )
-        .focus()
         .bind('keyup blur change', function(e){
           $(this).next().val($.fn.transliterate.convert($(this).val(), opts.table));
         })

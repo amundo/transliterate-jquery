@@ -15,6 +15,7 @@
   <script src="js/ug-Cyrl-table.js"></script>
   <script src="js/ug-Phon-table.js"></script>
   <script src="js/am-table.js"></script>
+  <script src="js/jp-Kata-table.js"></script>
   <script src="js/jquery.transliterate.js"></script>
 <script>
 
@@ -44,7 +45,7 @@ $(function(){
     table: ug_Cyrl
   });
 
-  $('textarea[lang=ug-Phon]').transliterate({
+$('textarea[lang=ug-Phon]').transliterate({
     sourceInputClass: 'plaintext',
     caseSensitive: true,
     table: ug_Phon
@@ -56,14 +57,11 @@ $(function(){
     table: am
   });
 
-  /*
-
-  $('textarea[lang=chr]').transliterate({
-    table: 'chr.js',
-    caseSensitive: false
-  })
-
-  */
+  $('textarea[lang=jp-Kata]').transliterate({
+    sourceInputClass: 'plaintext',
+    caseSensitive: true,
+    table: jp_Kata
+  });
 
 })
 </script>
@@ -71,9 +69,13 @@ $(function(){
 </style>
 </head>
 <body>
+<div id="header">
 
 <h1>An experimental transliteration tool.</h1>
-
+</div>
+<div id="content">
+<p><a href="./doc">help</a></p>
+<p><em>Type in the yellow box and the transliteration will appear on the right.</em></p>
 <h2>Cherokee</h2>
 <textarea lang="chr" type="text"></textarea>
 
@@ -89,9 +91,13 @@ $(function(){
 <h2>Uyghur IPA</h2>
 <textarea lang="ug-Phon" type="text" ></textarea>
 
+<h2>Japanese Katakana</h2>
+<textarea lang="jp-Kata" type="text" ></textarea>
+
 <h2>Amharic</h2>
 <textarea lang="am" type="text" ></textarea>
 
+</div><!-- #content -->
 </body>
 
 </html>
