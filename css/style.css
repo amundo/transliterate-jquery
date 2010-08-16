@@ -74,13 +74,12 @@ input {
 }
 
 #header { 
-  overflow:auto;
-  background: url(../img/logo.png) 5px center no-repeat transparent;
+  overflow:hidden;
   height: 200px;
   padding: 5px;
 }
 
-h1 { 
-  text-align:right;
+#header h1 { 
+  float:right;
   color: white;
 }
