@@ -19,6 +19,7 @@
   <script src="js/ug-Phon-table.js"></script>
   <script src="js/am-table.js"></script>
   <script src="js/jp-Kata-table.js"></script>
+  <script src="js/oswalt-table.js"></script>
   <script src="js/jquery.transliterate.js"></script>
 <script>
 
@@ -66,7 +67,12 @@ $('textarea[lang=ug-Phon]').transliterate({
     table: jp_Kata
   });
 
-})
+
+  $('textarea[lang=kju]').transliterate({
+    sourceInputClass: 'plaintext',
+    caseSensitive: true,
+    table: oswalt
+  });})
 </script>
 <style>
 </style>
@@ -99,6 +105,9 @@ $('textarea[lang=ug-Phon]').transliterate({
 
 <h2>Amharic</h2>
 <textarea lang="am" type="text" ></textarea>
+
+<h2>Oswalt Kashaya transliteration scheme</h2>
+<textarea lang="kju" type="text" ></textarea>
 
 </div><!-- #content -->
 </body>

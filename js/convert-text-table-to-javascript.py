@@ -8,10 +8,18 @@ from operator import itemgetter
 sys.stdout = codecs.getwriter('utf-8')(sys.stdout)
 source_file =  sys.argv[1]
 
+def unicode_escape(letter):
+  return "\u%04x" % ord(letter)
+
+def unicode_escape_word(word):
+  return ''.join([unicode_escape(letter) for letter in word])
+
 lines = open(source_file).read().decode('utf-8').strip().splitlines()
 pairs = [line.strip().split() for line in lines]
 temp = sorted([(len(a), a, b) for a,b in pairs], reverse=True)
+#pairs = [(unicode_escape_word(y),z) for x, y, z in temp]
 pairs = [(y,z) for x, y, z in temp]
+
 
 lang_code = source_file.split('-')[0] # i'm looking at you.
 
@@ -21,7 +29,7 @@ var %s = [
 ]
 """ 
 
-row = u""" ['%s', '%s'],\n"""
+row = u""" ["%s", "%s"],\n"""
 
 rows = u''
 

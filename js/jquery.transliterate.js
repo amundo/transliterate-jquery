@@ -38,7 +38,7 @@ use me like this:
   }
 
   $.fn.transliterate.defaults = { 
-    caseSensitive: false
+    caseSensitive: true
   };
 
 
@@ -48,7 +48,7 @@ use me like this:
     $.each(table, function(i, pairs){
       var before = pairs[0];
       var after = pairs[1];
-      var pattern = new RegExp(before, 'gi')
+      var pattern = new RegExp(before, 'g')
       plaintext = plaintext.replace(pattern, after, 'g');
     })
     return plaintext;
