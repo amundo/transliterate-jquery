@@ -29,11 +29,22 @@ var %s = [
 ]
 """ 
 
+def escape_special_regex_characters(pattern):
+  special_regex_characters = '?$.+'
+  fixed = []
+  for letter in pattern: 
+    if letter in special_regex_characters:
+      fixed.append('\\\\' + letter) 
+    else:
+      fixed.append(letter) 
+  return ''.join(fixed)
+
 row = u""" ["%s", "%s"],\n"""
 
 rows = u''
 
 for before, after in pairs:
+  before = escape_special_regex_characters(before)
   rows += row % (before, after)
 
 rows = rows.strip()[:-1] # nuke final comma.
