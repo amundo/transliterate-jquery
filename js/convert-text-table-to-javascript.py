@@ -15,7 +15,12 @@ def unicode_escape_word(word):
   return ''.join([unicode_escape(letter) for letter in word])
 
 lines = open(source_file).read().decode('utf-8').strip().splitlines()
-pairs = [line.strip().split() for line in lines]
+
+def decomment(line):
+  if '//' in line:
+    return line.split('//')[0].strip()
+
+pairs = [decomment(line).strip().split() for line in lines]
 temp = sorted([(len(a), a, b) for a,b in pairs], reverse=True)
 #pairs = [(unicode_escape_word(y),z) for x, y, z in temp]
 pairs = [(y,z) for x, y, z in temp]
@@ -30,7 +35,7 @@ var %s = [
 """ 
 
 def escape_special_regex_characters(pattern):
-  special_regex_characters = '?$.+'
+  special_regex_characters = '^?$.+'
   fixed = []
   for letter in pattern: 
     if letter in special_regex_characters:

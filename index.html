@@ -20,6 +20,7 @@
   <script src="js/am-table.js"></script>
   <script src="js/jp-Kata-table.js"></script>
   <script src="js/oswalt-table.js"></script>
+  <script src="js/goddard-table.js"></script>
   <script src="js/jquery.transliterate.js"></script>
 <script>
 
@@ -68,6 +69,12 @@ $('textarea[lang=ug-Phon]').transliterate({
   });
 
 
+  $('textarea[lang=mvb]').transliterate({
+    sourceInputClass: 'plaintext',
+    caseSensitive: true,
+    table: goddard
+  });
+
   $('textarea[lang=kju]').transliterate({
     sourceInputClass: 'plaintext',
     caseSensitive: true,
@@ -85,13 +92,20 @@ $('textarea[lang=ug-Phon]').transliterate({
 <div id="content">
 <p><a href="./doc">help</a></p>
 <p><em>Type in the yellow box and the transliteration will appear on the right.</em></p>
+
+<h2>Oswalt Kashaya transliteration scheme</h2>
+<textarea lang="kju" type="text" ></textarea>
+
+<h2>Goddard Bear River / Mattole Athabascan transliteration scheme</h2>
+<textarea lang="mvb" type="text" ></textarea>
+
 <h2>Cherokee</h2>
 <textarea lang="chr" type="text"></textarea>
 
 <h2>Esperanto</h2>
 <textarea lang="eo" type="text" ></textarea>
 
-<h2>Uyghur Arabic (UEY)</h2>
+<h2><del>Uyghur Arabic (UEY)</del> Currently broken!</h2>
 <textarea dir="rtl" lang="ug-Arab" type="text" ></textarea>
 
 <h2>Uyghur Cyrillic (USY)</h2>
@@ -105,9 +119,6 @@ $('textarea[lang=ug-Phon]').transliterate({
 
 <h2>Amharic</h2>
 <textarea lang="am" type="text" ></textarea>
-
-<h2>Oswalt Kashaya transliteration scheme</h2>
-<textarea lang="kju" type="text" ></textarea>
 
 </div><!-- #content -->
 </body>
