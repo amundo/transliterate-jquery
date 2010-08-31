@@ -17,22 +17,30 @@ def unicode_escape_word(word):
 lines = open(source_file).read().decode('utf-8').strip().splitlines()
 
 def decomment(line):
-  if '//' in line:
+  if len(line)> 0 and '//' in line:
     return line.split('//')[0].strip()
+  else: 
+    return line
 
 pairs = [decomment(line).strip().split() for line in lines]
 temp = sorted([(len(a), a, b) for a,b in pairs], reverse=True)
-#pairs = [(unicode_escape_word(y),z) for x, y, z in temp]
 pairs = [(y,z) for x, y, z in temp]
-
-
-lang_code = source_file.split('-')[0] # i'm looking at you.
 
 json = u"""
 var %s = [
   %s
 ]
 """ 
+
+def hyphen_to_underscore(lang):
+  """
+  we need to convert, e.g., mvb-x-goddard to 
+  mvb_x_goddard
+  """
+  return lang.replace( '-' , '_' ) # aww, emo smilies.
+
+lang_code = source_file.replace('.txt','')
+lang_var_name = hyphen_to_underscore(lang_code)
 
 def escape_special_regex_characters(pattern):
   special_regex_characters = '^?$.+'
@@ -54,5 +62,5 @@ for before, after in pairs:
 
 rows = rows.strip()[:-1] # nuke final comma.
 
-print json % (lang_code, rows)
+print json % (lang_var_name, rows)
   
