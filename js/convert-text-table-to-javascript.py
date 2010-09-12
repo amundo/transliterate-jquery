@@ -16,6 +16,8 @@ def unicode_escape_word(word):
 
 lines = open(source_file).read().decode('utf-8').strip().splitlines()
 
+lines = [line for line in lines if not line.strip().startswith('#')]
+
 def decomment(line):
   if len(line)> 0 and '//' in line:
     return line.split('//')[0].strip()
