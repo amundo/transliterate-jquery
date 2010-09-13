@@ -20,11 +20,11 @@ use me like this:
 
       var opts = $.extend({}, $.fn.transliterate.defaults, options);
 
-      $target = $(this);
+      var $target = $(this);
       $target.val('');
 
       //$source = $('<input/>', 
-      $source = $target.clone();
+      var $source = $target.clone();
       $source.addClass(opts.sourceInputClass);
 
       $source
