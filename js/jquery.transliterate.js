@@ -76,4 +76,4 @@ use me like this:
   };
 
 
-})(jQuery);
+})(this.jQuery);
