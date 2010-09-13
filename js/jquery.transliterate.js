@@ -34,8 +34,8 @@ use me like this:
         })
         .next().after($.fn.transliterate.viewDiv(opts.table));
 
-    })
-  }
+    });
+  };
 
   $.fn.transliterate.defaults = { 
     caseSensitive: true
@@ -48,9 +48,9 @@ use me like this:
     $.each(table, function(i, pairs){
       var before = pairs[0];
       var after = pairs[1];
-      var pattern = new RegExp(before, 'g')
+      var pattern = new RegExp(before, 'g');
       plaintext = plaintext.replace(pattern, after, 'g');
-    })
+    });
     return plaintext;
   };
 
@@ -60,10 +60,10 @@ use me like this:
       var before = pairs[0];
       var after = pairs[1];
       htmltable.push("<tr><td class='inputKey'>"+before+"</td><td class='outputLetter'>"+after+"</td></tr>");
-    })
+    });
     htmltable.push('</table>');
     return htmltable.join('\n');
-  }
+  };
 
   $.fn.transliterate.viewDiv = function (table){
     var div = ['<div class="rules">'];
@@ -71,10 +71,10 @@ use me like this:
       var before = pairs[0];
       var after = pairs[1];
       div.push("<span class='pair'><span class='before'>"+before+"</span>&nbsp;&rarr;&nbsp;<span class='before'>"+after+"</span></span>");
-    })
+    });
     div.push('</div>');
     return div.join('\n');
-  }
+  };
 
 
-})(jQuery)
+})(jQuery);
