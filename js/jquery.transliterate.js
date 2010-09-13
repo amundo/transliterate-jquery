@@ -44,7 +44,6 @@ use me like this:
 
 
   $.fn.transliterate.convert = function(plaintext, table){ 
-    var converted = '';
     $.each(table, function(i, pairs){
       var before = pairs[0];
       var after = pairs[1];
