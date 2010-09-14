@@ -14,7 +14,20 @@ Thanks:
 I know this documentation isn't practical yet; I'm working on it.
 -----------------------------------------------------------------
 
+Installing
+----------
+
+1. Build a transliteration scheme
+2. Convert transliteration into a .js array
+3. Include `jquery.transliterate.js`
+4. Include `x-your-scheme.js` (more on a possible naming convention soon)
+5. Run something like: 
+
+    $('input').transliterate(some_scheme)
+
+
 Background
+----------
 
 Transliteration is the process of converting one writing system into another. (Note that it has nothing to do with translation.)
 
