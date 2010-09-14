@@ -1,6 +1,8 @@
 A jQuery transliteration plugin
+===============================
 
-jquery.transliterate.js
+`jquery.transliterate.js`
+-------------------------
 
 Pat Hall pat@fileslip.net
 
