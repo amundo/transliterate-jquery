@@ -17,7 +17,7 @@ I know this documentation isn't practical yet; I'm working on it.
 Installing
 ----------
 
-1. Build a transliteration scheme
+1. Build a transliteration scheme (more on this soon)
 2. Convert transliteration into a .js array
 3. Include `jquery.transliterate.js`
 4. Include `x-your-scheme.js` (more on a possible naming convention soon)
