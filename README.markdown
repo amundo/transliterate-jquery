@@ -14,6 +14,11 @@ Thanks:
 I know this documentation isn't practical yet; I'm working on it.
 -----------------------------------------------------------------
 
+Demo
+----
+
+See <a href="http://www.fileslip.net/projects/transliterate">an in-progress demo</a>.
+
 Installing
 ----------
 
