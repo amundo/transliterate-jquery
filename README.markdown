@@ -31,8 +31,8 @@ Installing
     $('input').transliterate(some_scheme)
 
 
-Background
-----------
+What is Transliteration?
+------------------------
 
 Transliteration is the process of converting one writing system into another. (Note that it has nothing to do with translation.)
 
