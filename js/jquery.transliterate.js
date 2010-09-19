@@ -24,7 +24,8 @@ use me like this:
       $target.val('');
 
       //$source = $('<input/>', 
-      var $source = $target.clone();
+      var $source = $target.clone(true);
+      //var $source.attr('id', 'source_' + $target.attr('id') );
       $source.addClass(opts.sourceInputClass);
 
       $source
@@ -40,8 +41,6 @@ use me like this:
   $.fn.transliterate.defaults = { 
     caseSensitive: true
   };
-
-
 
   $.fn.transliterate.convert = function(plaintext, table){ 
     $.each(table, function(i, pairs){
