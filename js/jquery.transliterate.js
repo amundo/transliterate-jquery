@@ -19,7 +19,6 @@ use me like this:
     return this.each(function(){
 
       var opts = $.extend({}, $.fn.transliterate.defaults, options);
-
       var $target = $(this);
       $target.val('');
 
@@ -32,14 +31,18 @@ use me like this:
         .insertBefore( $target )
         .bind('keyup blur change', function(e){
           $(this).next().val($.fn.transliterate.convert($(this).val(), opts.table));
-        })
-        .next().after($.fn.transliterate.viewDiv(opts.table));
+        });
+
+      if(opts.viewTable){
+        $source.next().after($.fn.transliterate.viewDiv(opts.table));
+      };
 
     });
   };
 
   $.fn.transliterate.defaults = { 
-    caseSensitive: true
+    caseSensitive: true,
+    viewTable: false
   };
 
   $.fn.transliterate.convert = function(plaintext, table){ 
