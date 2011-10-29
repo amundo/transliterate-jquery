@@ -10,8 +10,8 @@ MIT License
 
 Thanks:
 
-* l4rk on #jquery 
-* Fernandos on #jquery 
+* l4rk on #jquery
+* Fernandos on #jquery
 
 I know this documentation isn't practical yet; I'm working on it.
 -----------------------------------------------------------------
@@ -28,7 +28,7 @@ Installing
 2. Convert transliteration into a .js array
 3. Include `jquery.transliterate.js`
 4. Include `x-your-scheme.js` (more on a possible naming convention soon)
-5. Run something like: 
+5. Run something like:
 
     $('input').transliterate(some_scheme)
 
@@ -47,7 +47,7 @@ So for instance, one can transliterate  “Ruby” (as in the programming langua
 * Georgian: რუბი
 * Japanese Katakana: ルビー
 
-However, transliteration can serve a variety of purposes. For instance, sometimes it can be used to ease the process of inputting unusual characters. An example of this approach is in use on the 
+However, transliteration can serve a variety of purposes. For instance, sometimes it can be used to ease the process of inputting unusual characters. An example of this approach is in use on the
 Esperanto Wikipedia. Esperanto has a few unusual letters which are capped by a circumflex. Circumflexes are common enough, but Esperanto is rather unusual in setting them atop _c_, _g_, _h_ and o
 thers.
 

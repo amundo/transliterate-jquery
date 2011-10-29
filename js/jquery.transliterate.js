@@ -2,7 +2,7 @@
 
 jquery.transliterate.js -- jQuery based transliteration module
 
-MIT license 
+MIT license
 
 use me like this:
 
@@ -22,7 +22,7 @@ use me like this:
       var $target = $(this);
       $target.val('');
 
-      //$source = $('<input/>', 
+      //$source = $('<input/>',
       var $source = $target.clone(true);
       //var $source.attr('id', 'source_' + $target.attr('id') );
       $source.addClass(opts.sourceInputClass);
@@ -40,12 +40,12 @@ use me like this:
     });
   };
 
-  $.fn.transliterate.defaults = { 
+  $.fn.transliterate.defaults = {
     caseSensitive: true,
     viewTable: false
   };
 
-  $.fn.transliterate.convert = function(plaintext, table){ 
+  $.fn.transliterate.convert = function(plaintext, table){
     $.each(table, function(i, pairs){
       var before = pairs[0];
       var after = pairs[1];
