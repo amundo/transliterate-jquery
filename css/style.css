@@ -17,7 +17,7 @@ table.rules {
   border-right: 1px solid gray;
   border-left: 1px solid gray;
   margin: 2px;
-  width: 100px; 
+  width: 100px;
   float:right;
 }
 
@@ -51,35 +51,35 @@ div.rules span.pair span.before {
   font-family: monospace;
 }
 
-input { 
-  font-size: 300%; 
-  padding: 4px; 
+input {
+  font-size: 300%;
+  padding: 4px;
   border: 1px solid #ccc;
 }
 
-.plaintext { 
+.plaintext {
   dir: ltr;
-  border: 1px dashed #ccc; 
-  background: #FFFDD0; 
+  border: 1px dashed #ccc;
+  background: #FFFDD0;
 }
 
-#content, #help { 
+#content, #help {
   background: white;
   margin: 0 auto;
   overflow: auto;
-  border: 1px solid black; 
+  border: 1px solid black;
   padding: 1em;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
 }
 
-#header { 
+#header {
   overflow:hidden;
   height: 200px;
   padding: 5px;
 }
 
-#header h1 { 
+#header h1 {
   float:right;
   color: white;
 }
